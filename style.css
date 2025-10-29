@@ -1,0 +1,8 @@
+html {
+    background-color: aqua;
+}
+
+.navbar-custom-shadow {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Menambah ketajaman bayangan */
+}
