@@ -1,196 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu Penjualan - GusWarung</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      .navbar-brand {
-        font-family: "Playfair Display", serif;
-      }
-      /* Efek zoom gambar ketika hover */
-      .card-img-top {
-        transition: transform 0.4s ease;
-        object-fit: cover;
-        height: 180px; /* Tinggi gambar serasi untuk makanan */
-      }
-      .card:hover .card-img-top {
-        transform: scale(1.08);
-      }
-
-      /* Rating bintang */
-      .rating {
-        color: #ffc107;
-        font-size: 1.2rem;
-      }
-
-      /* Animasi halus muncul */
-      .card {
-        overflow: hidden;
-        position: relative;
-        border-radius: 12px;
-      }
-      .card-img-top {
-        transition: transform 0.4s ease;
-        object-fit: cover;
-        height: 180px;
-        border-radius: 12px 12px 0 0;
-      }
-      .card:hover .card-img-top {
-        transform: scale(1.08);
-      }
-
-      .popular-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: rgba(255, 193, 7, 0.9); /* Warna kuning transparan */
-        color: white;
-        font-weight: 600;
-        font-size: 0.85rem;
-        padding: 6px 12px;
-        border-radius: 10px;
-        backdrop-filter: blur(4px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        z-index: 5;
-      }
-
-      /* Styling untuk label Stok */
-      .stock-info {
-        font-size: 0.9rem;
-        font-weight: bold;
-        padding: 5px 0;
-      }
-      .stock-ready {
-        color: #198754; /* Hijau untuk Stok Cukup */
-      }
-      .stock-low {
-        color: #ffc107; /* Kuning untuk Stok Menipis */
-      }
-      .stock-out {
-        color: #dc3545; /* Merah untuk Stok Habis */
-      }
-
-      /* Style untuk Header Restoran */
-      .hero-section {
-        background: url("https://img.freepik.com/foto-gratis/pelayan-bahagia-menyajikan-makanan-kepada-sekelompok-teman-yang-ceria-di-pub_637285-12525.jpg")
-          no-repeat center center; /* Ganti dengan gambar restoran Anda */
-        background-size: cover;
-        height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        text-align: center;
-      }
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
-      }
-      .hero-content {
-        z-index: 2;
-        color: white;
-      }
-
-      /* Style tambahan untuk carousel minuman agar tampil horizontal */
-      .carousel-item-drinks {
-        /* Pastikan card minuman memiliki tinggi yang sama dengan card makanan */
-        height: 100%;
-      }
-      .carousel-inner .col-md-4 {
-        /* Untuk menampilkan 3 item per slide, kita perlu mengontrol lebar item di dalam inner*/
-        display: inline-block;
-        float: left;
-      }
-      /* Custom styling for carousel height */
-      .drink-carousel-container {
-        max-width: 900px; /* Batasi lebar carousel agar tidak terlalu besar */
-        margin: 0 auto;
-      }
-      .drink-card .card-img-top {
-        height: 220px; /* Tinggi gambar sedikit lebih besar untuk minuman di carousel */
-      }
-
-      .divider {
-        width: 120px;
-        height: 4px;
-        margin: 0 auto;
-        border-radius: 2px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          #ffc107,
-          transparent
-        );
-      }
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3,
+        .navbar-brand {
+            font-family: "Playfair Display", serif;
+        }
+        /* Efek zoom gambar ketika hover */
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            /* sejajarkan logo dan teks di tengah vertikal */
+            gap: 10px;
+            /* beri jarak kecil antara logo dan teks */
+        }
+        
+        .navbar-brand img {
+            display: inline-block;
+            vertical-align: middle;
+            /* pastikan logo ikut rata tengah */
+            margin-bottom: 0 !important;
+            /* hilangkan offset bawah */
+        }
+        
+        .card-img-top {
+            transition: transform 0.4s ease;
+            object-fit: cover;
+            height: 180px;
+            /* Tinggi gambar serasi untuk makanan */
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.08);
+        }
+        /* Rating bintang */
+        
+        .rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        /* Animasi halus muncul */
+        
+        .card {
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+        }
+        
+        .card-img-top {
+            transition: transform 0.4s ease;
+            object-fit: cover;
+            height: 180px;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.08);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255, 193, 7, 0.9);
+            /* Warna kuning transparan */
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+        }
+        /* Styling untuk label Stok */
+        
+        .stock-info {
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+        
+        .stock-ready {
+            color: #198754;
+            /* Hijau untuk Stok Cukup */
+        }
+        
+        .stock-low {
+            color: #ffc107;
+            /* Kuning untuk Stok Menipis */
+        }
+        
+        .stock-out {
+            color: #dc3545;
+            /* Merah untuk Stok Habis */
+        }
+        /* Style untuk Header Restoran */
+        
+        .hero-section {
+            background: url("https://img.freepik.com/foto-gratis/pelayan-bahagia-menyajikan-makanan-kepada-sekelompok-teman-yang-ceria-di-pub_637285-12525.jpg") no-repeat center center;
+            /* Ganti dengan gambar restoran Anda */
+            background-size: cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Overlay gelap */
+        }
+        
+        .hero-content {
+            z-index: 2;
+            color: white;
+        }
+        /* Style tambahan untuk carousel minuman agar tampil horizontal */
+        
+        .carousel-item-drinks {
+            /* Pastikan card minuman memiliki tinggi yang sama dengan card makanan */
+            height: 100%;
+        }
+        
+        .carousel-inner .col-md-4 {
+            /* Untuk menampilkan 3 item per slide, kita perlu mengontrol lebar item di dalam inner*/
+            display: inline-block;
+            float: left;
+        }
+        /* Custom styling for carousel height */
+        
+        .drink-carousel-container {
+            max-width: 900px;
+            /* Batasi lebar carousel agar tidak terlalu besar */
+            margin: 0 auto;
+        }
+        
+        .drink-card .card-img-top {
+            height: 220px;
+            /* Tinggi gambar sedikit lebih besar untuk minuman di carousel */
+        }
+        
+        .divider {
+            width: 120px;
+            height: 4px;
+            margin: 0 auto;
+            border-radius: 2px;
+            background: linear-gradient( to right, transparent, #ffc107, transparent);
+        }
     </style>
-  </head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
 
-  <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top shadow-lg"
-      style="background-color: #ffc107"
-    >
-      <div class="container">
-        <a class="navbar-brand text-white fw-bold" href="index.html">
-          <img
-            src="logo_guswarung tb.png"
-            alt="Logo"
-            width="40"
-            height="40"
-            class="d-inline-block align-text-top me-2"
-          />
-          GusWarung
-        </a>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top shadow-lg" style="background-color: #ffc107">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="index.html">
+                <img src="logo_guswarung tb.png" alt="Logo" width="40" height="40" /> GusWarung
+            </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-black" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-black active" href="penjualan.html"
-                >Penjualan</a
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black active" href="penjualan.html">Penjualan</a
               >
             </li>
             <li class="nav-item">
@@ -200,20 +202,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-black" href="#">Laporan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-black" href="#">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-black"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <span class="material-symbols-outlined align-middle"
-                  >account_circle</span
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="material-symbols-outlined align-middle">account_circle</span
                 >
               </a>
               <ul class="dropdown-menu bg-warning">
@@ -261,273 +256,224 @@
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="card shadow-sm border-0">
             <span class="popular-badge">⭐ Populer</span>
-            <img
-              src="img/NasiGoreng.jpg"
-              class="card-img-top"
-              alt="Nasi Goreng"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Nasi Goreng Spesial</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
-              <p class="card-text text-muted flex-grow-1">
-                Nasi goreng dengan telur, ayam suwir, dan bumbu rempah khas
-                GusWarung.
-              </p>
-              <div class="stock-info stock-ready mb-2">Stok: 25 Porsi</div>
-              <p class="fw-bold text-warning">Rp 15.000</p>
-              <button class="btn btn-warning text-white w-100">
+                            <img src="img/NasiGoreng.jpg" class="card-img-top" alt="Nasi Goreng" />
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Nasi Goreng Spesial</h5>
+                                <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
+                                <p class="card-text text-muted flex-grow-1">
+                                    Nasi goreng dengan telur, ayam suwir, dan bumbu rempah khas GusWarung.
+                                </p>
+                                <div class="stock-info stock-ready mb-2">Stok: 25 Porsi</div>
+                                <p class="fw-bold text-warning">Rp 15.000</p>
+                                <button class="btn btn-warning text-white w-100">
                 Tambah ke Daftar
               </button>
+                            </div>
             </div>
-          </div>
         </div>
 
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="card shadow-sm border-0">
-            <span class="popular-badge">⭐ Populer</span>
-            <img
-              src="img/AyamBakar.jpg"
-              class="card-img-top"
-              alt="Ayam Geprek"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Ayam Bakar</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Ayam goreng tepung dengan sambal pedas yang menggugah selera.
-              </p>
-              <div class="stock-info stock-low mb-2">Stok: 5 Porsi</div>
-              <p class="fw-bold text-warning">Rp 18.000</p>
-              <button class="btn btn-warning text-white w-100">
+            <div class="card shadow-sm border-0">
+                <span class="popular-badge">⭐ Populer</span>
+                <img src="img/AyamBakar.jpg" class="card-img-top" alt="Ayam Geprek" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Ayam Bakar</h5>
+                    <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
+                    <p class="card-text text-muted flex-grow-1">
+                        Ayam goreng tepung dengan sambal pedas yang menggugah selera.
+                    </p>
+                    <div class="stock-info stock-low mb-2">Stok: 5 Porsi</div>
+                    <p class="fw-bold text-warning">Rp 18.000</p>
+                    <button class="btn btn-warning text-white w-100">
                 Tambah ke Daftar
               </button>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-          <div class="card shadow-sm border-0">
-            <img
-              src="img/AyamKremes.jpeg"
-              class="card-img-top"
-              alt="Mie Goreng"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Ayam Kremes</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
-              <p class="card-text text-muted flex-grow-1">
-                Mie goreng khas Jawa dengan rasa manis gurih dan topping ayam.
-              </p>
-              <div class="stock-info stock-ready mb-2">Stok: 18 Porsi</div>
-              <p class="fw-bold text-warning">Rp 14.000</p>
-              <button class="btn btn-warning text-white w-100">
+            <div class="card shadow-sm border-0">
+                <img src="img/AyamKremes.jpeg" class="card-img-top" alt="Mie Goreng" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Ayam Kremes</h5>
+                    <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
+                    <p class="card-text text-muted flex-grow-1">
+                        Mie goreng khas Jawa dengan rasa manis gurih dan topping ayam.
+                    </p>
+                    <div class="stock-info stock-ready mb-2">Stok: 18 Porsi</div>
+                    <p class="fw-bold text-warning">Rp 14.000</p>
+                    <button class="btn btn-warning text-white w-100">
                 Tambah ke Daftar
               </button>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0">
-            <img src="img/AyamLaos.webp" class="card-img-top" alt="Sate Ayam" />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Ayam Laos</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Disajikan dengan bumbu kacang lembut dan lontong hangat.
-              </p>
-              <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
-              <p class="fw-bold text-warning">Rp 20.000</p>
-              <button class="btn btn-warning text-white w-100">
+            <div class="card shadow-sm border-0">
+                <img src="img/AyamLaos.webp" class="card-img-top" alt="Sate Ayam" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Ayam Laos</h5>
+                    <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
+                    <p class="card-text text-muted flex-grow-1">
+                        Disajikan dengan bumbu kacang lembut dan lontong hangat.
+                    </p>
+                    <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
+                    <p class="fw-bold text-warning">Rp 20.000</p>
+                    <button class="btn btn-warning text-white w-100">
                 Tambah ke Daftar
               </button>
+                </div>
             </div>
-          </div>
         </div>
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0">
-            <img
-              src="img/AyamKarage.jpg"
-              class="card-img-top"
-              alt="Sate Ayam"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Ayam Karage</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Disajikan dengan bumbu kacang lembut dan lontong hangat.
-              </p>
-              <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
-              <p class="fw-bold text-warning">Rp 20.000</p>
-              <button class="btn btn-warning text-white w-100">
+            <div class="card shadow-sm border-0">
+                <img src="img/AyamKarage.jpg" class="card-img-top" alt="Sate Ayam" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Ayam Karage</h5>
+                    <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
+                    <p class="card-text text-muted flex-grow-1">
+                        Disajikan dengan bumbu kacang lembut dan lontong hangat.
+                    </p>
+                    <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
+                    <p class="fw-bold text-warning">Rp 20.000</p>
+                    <button class="btn btn-warning text-white w-100">
                 Tambah ke Daftar
               </button>
+                </div>
             </div>
-          </div>
         </div>
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0">
-            <span class="popular-badge">⭐ Populer</span>
-            <img
-              src="img/AyamKampus.jpg"
-              class="card-img-top"
-              alt="Sate Ayam"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Ayam Kampus</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Disajikan dengan bumbu kacang lembut dan lontong hangat.
-              </p>
-              <div class="stock-info stock-out mb-2">Stok Habis</div>
-              <p class="fw-bold text-warning">Rp 20.000</p>
-              <button class="btn btn-secondary text-white w-100" disabled>
+            <div class="card shadow-sm border-0">
+                <span class="popular-badge">⭐ Populer</span>
+                <img src="img/AyamKampus.jpg" class="card-img-top" alt="Sate Ayam" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Ayam Kampus</h5>
+                    <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
+                    <p class="card-text text-muted flex-grow-1">
+                        Disajikan dengan bumbu kacang lembut dan lontong hangat.
+                    </p>
+                    <div class="stock-info stock-out mb-2">Stok Habis</div>
+                    <p class="fw-bold text-warning">Rp 20.000</p>
+                    <button class="btn btn-secondary text-white w-100" disabled>
                 Stok Habis
               </button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        </div>
 
-      <div class="divider mx-auto mb-5" data-aos="fade-up"></div>
+        <div class="divider mx-auto mb-5" data-aos="fade-up"></div>
 
-      <h2 class="fw-bold text-center text-warning" data-aos="fade-down">
-        Menu Minuman Segar
-      </h2>
-      <p class="mb-5 text-center" data-aos="fade-down">
-        Nikmati pilihan minuman segar kami, siap menemani setiap santapanmu.
-      </p>
+        <h2 class="fw-bold text-center text-warning" data-aos="fade-down">
+            Menu Minuman Segar
+        </h2>
+        <p class="mb-5 text-center" data-aos="fade-down">
+            Nikmati pilihan minuman segar kami, siap menemani setiap santapanmu.
+        </p>
 
-      <div class="drink-carousel-container" data-aos="fade-up">
-        <div id="drinkCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row g-4 justify-content-center">
-                <div class="col-md-4 carousel-item-drinks">
-                  <div class="card shadow-sm border-0 drink-card">
-                    <img
-                      src="img/EsTeh.jpg"
-                      class="card-img-top"
-                      alt="Es Teh Manis"
-                    />
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title fw-bold">Es Teh Manis</h5>
-                      <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
-                      <p class="card-text text-muted flex-grow-1">
-                        Minuman segar favorit semua kalangan.
-                      </p>
-                      <div class="stock-info stock-ready mb-2">
-                        Stok: 50 Gelas
-                      </div>
-                      <p class="fw-bold text-warning">Rp 5.000</p>
-                      <button class="btn btn-warning text-white w-100">
+        <div class="drink-carousel-container" data-aos="fade-up">
+            <div id="drinkCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4 carousel-item-drinks">
+                                <div class="card shadow-sm border-0 drink-card">
+                                    <img src="img/EsTeh.jpg" class="card-img-top" alt="Es Teh Manis" />
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title fw-bold">Es Teh Manis</h5>
+                                        <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
+                                        <p class="card-text text-muted flex-grow-1">
+                                            Minuman segar favorit semua kalangan.
+                                        </p>
+                                        <div class="stock-info stock-ready mb-2">
+                                            Stok: 50 Gelas
+                                        </div>
+                                        <p class="fw-bold text-warning">Rp 5.000</p>
+                                        <button class="btn btn-warning text-white w-100">
                         Tambah ke Daftar
                       </button>
-                    </div>
-                  </div>
-                </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="col-md-4 carousel-item-drinks">
-                  <div class="card shadow-sm border-0 drink-card">
-                    <img
-                      src="img/KopiHitam.jpg"
-                      class="card-img-top"
-                      alt="Kopi Hitam"
-                    />
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title fw-bold">Kopi Hitam</h5>
-                      <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
-                      <p class="card-text text-muted flex-grow-1">
-                        Kopi robusta asli dengan aroma khas dan rasa kuat.
-                      </p>
-                      <div class="stock-info stock-out mb-2">Stok: Habis</div>
-                      <p class="fw-bold text-warning">Rp 8.000</p>
-                      <button class="btn btn-secondary w-100" disabled>
+                            <div class="col-md-4 carousel-item-drinks">
+                                <div class="card shadow-sm border-0 drink-card">
+                                    <img src="img/KopiHitam.jpg" class="card-img-top" alt="Kopi Hitam" />
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title fw-bold">Kopi Hitam</h5>
+                                        <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
+                                        <p class="card-text text-muted flex-grow-1">
+                                            Kopi robusta asli dengan aroma khas dan rasa kuat.
+                                        </p>
+                                        <div class="stock-info stock-out mb-2">Stok: Habis</div>
+                                        <p class="fw-bold text-warning">Rp 8.000</p>
+                                        <button class="btn btn-secondary w-100" disabled>
                         Stok Habis
                       </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="carousel-item">
-              <div class="row g-4 justify-content-center">
-                <div class="col-md-4 carousel-item-drinks">
-                  <div class="card shadow-sm border-0 drink-card">
-                    <img
-                      src="img/EsJeruk.jpg"
-                      class="card-img-top"
-                      alt="Es Jeruk"
-                    />
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title fw-bold">Es Jeruk Peras</h5>
-                      <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-                      <p class="card-text text-muted flex-grow-1">
-                        Jeruk peras murni, segar, dan kaya vitamin C.
-                      </p>
-                      <div class="stock-info stock-ready mb-2">
-                        Stok: 40 Gelas
-                      </div>
-                      <p class="fw-bold text-warning">Rp 7.000</p>
-                      <button class="btn btn-warning text-white w-100">
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4 carousel-item-drinks">
+                                <div class="card shadow-sm border-0 drink-card">
+                                    <img src="img/EsJeruk.jpg" class="card-img-top" alt="Es Jeruk" />
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title fw-bold">Es Jeruk Peras</h5>
+                                        <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
+                                        <p class="card-text text-muted flex-grow-1">
+                                            Jeruk peras murni, segar, dan kaya vitamin C.
+                                        </p>
+                                        <div class="stock-info stock-ready mb-2">
+                                            Stok: 40 Gelas
+                                        </div>
+                                        <p class="fw-bold text-warning">Rp 7.000</p>
+                                        <button class="btn btn-warning text-white w-100">
                         Tambah ke Daftar
                       </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#drinkCarousel"
-            data-bs-slide="prev"
-          >
+                <button class="carousel-control-prev" type="button" data-bs-target="#drinkCarousel" data-bs-slide="prev">
             <span
               class="carousel-control-prev-icon bg-dark rounded-circle"
               aria-hidden="true"
             ></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#drinkCarousel"
-            data-bs-slide="next"
-          >
+                <button class="carousel-control-next" type="button" data-bs-target="#drinkCarousel" data-bs-slide="next">
             <span
               class="carousel-control-next-icon bg-dark rounded-circle"
               aria-hidden="true"
             ></span>
             <span class="visually-hidden">Next</span>
           </button>
+            </div>
         </div>
-      </div>
-    </div>
+        </div>
 
-    <!-- Quote Section -->
-    <section
-      class="text-center my-5 py-5 position-relative bg-light"
-      data-aos="fade-up"
-      style="
+        <!-- Quote Section -->
+        <section class="text-center my-5 py-5 position-relative bg-light" data-aos="fade-up" style="
         border-top: 3px solid #ffc107;
         border-bottom: 3px solid #ffc107;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      "
-    >
-      <div class="container">
-        <i class="material-symbols-outlined text-warning fs-1 mb-3">
+      ">
+            <div class="container">
+                <i class="material-symbols-outlined text-warning fs-1 mb-3">
           format_quote
         </i>
-        <h2 class="fw-bold text-warning mb-3 fst-italic">
-          "Rasa yang Mengikat Kenangan"
-        </h2>
-        <div
-          class="divider mx-auto mb-3"
-          style="
+                <h2 class="fw-bold text-warning mb-3 fst-italic">
+                    "Rasa yang Mengikat Kenangan"
+                </h2>
+                <div class="divider mx-auto mb-3" style="
             width: 80px;
             height: 4px;
             border-radius: 2px;
@@ -537,35 +483,34 @@
               #ffc107,
               transparent
             );
-          "
-        ></div>
-        <p class="text-muted fs-5">
-          Di setiap hidangan, kami menyajikan lebih dari sekadar makanan — kami
-          menghadirkan kehangatan dan cerita di setiap rasa.
-        </p>
-        <p class="text-secondary mt-3 mb-0 fst-italic">
-          — Tim Dapur <b>GusWarung</b>
-        </p>
-      </div>
-    </section>
+          "></div>
+                <p class="text-muted fs-5">
+                    Di setiap hidangan, kami menyajikan lebih dari sekadar makanan — kami menghadirkan kehangatan dan cerita di setiap rasa.
+                </p>
+                <p class="text-secondary mt-3 mb-0 fst-italic">
+                    — Tim Dapur <b>GusWarung</b>
+                </p>
+            </div>
+        </section>
 
-    <footer class="text-center py-3 bg-light shadow-sm">
-      <small class="text-muted">© 2025 GusWarung. All rights reserved.</small>
-    </footer>
+        <footer class="text-center py-3 bg-light shadow-sm">
+            <small class="text-muted">© 2025 GusWarung. All rights reserved.</small>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
 
-      // Tambahan script untuk memastikan carousel berfungsi
-      var myCarousel = document.getElementById("drinkCarousel");
-      new bootstrap.Carousel(myCarousel, {
-        interval: 5000, // Otomatis berpindah slide setiap 5 detik
-      });
-    </script>
-  </body>
+            // Tambahan script untuk memastikan carousel berfungsi
+            var myCarousel = document.getElementById("drinkCarousel");
+            new bootstrap.Carousel(myCarousel, {
+                interval: 5000, // Otomatis berpindah slide setiap 5 detik
+            });
+        </script>
+</body>
+
 </html>
