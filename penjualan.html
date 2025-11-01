@@ -16,6 +16,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+      }
       /* Efek zoom gambar ketika hover */
       .card-img-top {
         transition: transform 0.4s ease;
@@ -34,12 +43,33 @@
 
       /* Animasi halus muncul */
       .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px;
       }
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      .card-img-top {
+        transition: transform 0.4s ease;
+        object-fit: cover;
+        height: 180px;
+        border-radius: 12px 12px 0 0;
+      }
+      .card:hover .card-img-top {
+        transform: scale(1.08);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(255, 193, 7, 0.9); /* Warna kuning transparan */
+        color: white;
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 5;
       }
 
       /* Styling untuk label Stok */
@@ -101,8 +131,25 @@
       .drink-card .card-img-top {
         height: 220px; /* Tinggi gambar sedikit lebih besar untuk minuman di carousel */
       }
+
+      .divider {
+        width: 120px;
+        height: 4px;
+        margin: 0 auto;
+        border-radius: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #ffc107,
+          transparent
+        );
+      }
     </style>
   </head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
   <body>
     <nav
@@ -142,10 +189,14 @@
               <a class="nav-link text-black" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black active" href="penjualan.html">Penjualan</a>
+              <a class="nav-link text-black active" href="penjualan.html"
+                >Penjualan</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black" href="inventaris.html">Inventaris</a>
+              <a class="nav-link text-black" href="inventaris.html"
+                >Inventaris</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link text-black" href="#">Laporan</a>
@@ -197,13 +248,19 @@
       </div>
     </header>
     <div class="container my-5">
-      <h2 class="mb-5 fw-bold text-center text-warning" data-aos="fade-down">
-        🍽️ Menu Makanan Pilihan
+      <h2 class="fw-bold text-center text-warning" data-aos="fade-down">
+        <b>Menu Makanan Pilihan</b>
       </h2>
+      <p class="mb-5 text-center" data-aos="fade-down">
+        Temukan hidangan lezat pilihan kami, siap memanjakan lidahmu!
+      </p>
+
+      <div class="divider mx-auto mb-5" data-aos="fade-up"></div>
 
       <div class="row g-4 mb-5">
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="card shadow-sm border-0">
+            <span class="popular-badge">⭐ Populer</span>
             <img
               src="img/NasiGoreng.jpg"
               class="card-img-top"
@@ -227,6 +284,7 @@
 
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="card shadow-sm border-0">
+            <span class="popular-badge">⭐ Populer</span>
             <img
               src="img/AyamBakar.jpg"
               class="card-img-top"
@@ -309,6 +367,7 @@
         </div>
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
           <div class="card shadow-sm border-0">
+            <span class="popular-badge">⭐ Populer</span>
             <img
               src="img/AyamKampus.jpg"
               class="card-img-top"
@@ -320,7 +379,7 @@
               <p class="card-text text-muted flex-grow-1">
                 Disajikan dengan bumbu kacang lembut dan lontong hangat.
               </p>
-              <div class="stock-info stock-out mb-2">❌ Stok Habis</div>
+              <div class="stock-info stock-out mb-2">Stok Habis</div>
               <p class="fw-bold text-warning">Rp 20.000</p>
               <button class="btn btn-secondary text-white w-100" disabled>
                 Stok Habis
@@ -330,11 +389,14 @@
         </div>
       </div>
 
-      <hr class="my-5 border-warning border-3 opacity-75" />
+      <div class="divider mx-auto mb-5" data-aos="fade-up"></div>
 
-      <h2 class="mb-5 fw-bold text-center text-warning" data-aos="fade-down">
-        🥤 Menu Minuman Segar
+      <h2 class="fw-bold text-center text-warning" data-aos="fade-down">
+        Menu Minuman Segar
       </h2>
+      <p class="mb-5 text-center" data-aos="fade-down">
+        Nikmati pilihan minuman segar kami, siap menemani setiap santapanmu.
+      </p>
 
       <div class="drink-carousel-container" data-aos="fade-up">
         <div id="drinkCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -446,7 +508,48 @@
       </div>
     </div>
 
-    <footer class="text-center py-3 bg-light shadow-sm mt-5">
+    <!-- Quote Section -->
+    <section
+      class="text-center my-5 py-5 position-relative bg-light"
+      data-aos="fade-up"
+      style="
+        border-top: 3px solid #ffc107;
+        border-bottom: 3px solid #ffc107;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      "
+    >
+      <div class="container">
+        <i class="material-symbols-outlined text-warning fs-1 mb-3">
+          format_quote
+        </i>
+        <h2 class="fw-bold text-warning mb-3 fst-italic">
+          "Rasa yang Mengikat Kenangan"
+        </h2>
+        <div
+          class="divider mx-auto mb-3"
+          style="
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(
+              to right,
+              transparent,
+              #ffc107,
+              transparent
+            );
+          "
+        ></div>
+        <p class="text-muted fs-5">
+          Di setiap hidangan, kami menyajikan lebih dari sekadar makanan — kami
+          menghadirkan kehangatan dan cerita di setiap rasa.
+        </p>
+        <p class="text-secondary mt-3 mb-0 fst-italic">
+          — Tim Dapur <b>GusWarung</b>
+        </p>
+      </div>
+    </section>
+
+    <footer class="text-center py-3 bg-light shadow-sm">
       <small class="text-muted">© 2025 GusWarung. All rights reserved.</small>
     </footer>
 
